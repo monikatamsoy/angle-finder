@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/uikit.min.css">
+</head>
+<body class="uk-height-viewport uk-background-primary">
+    <div class="uk-padding-large"></div>
+    <div class="uk-flex uk-flex-center">
+        <div class="uk-card uk-card-hover uk-card-default uk-padding-large uk-text-center">
+            <legend class="uk-legend">Angle finder</legend>
+            <div class="uk-margin">
+                <input type="text" class="uk-input uk-width-large" name="time" id="time" placeholder="Enter time in hh:mm">
+            </div>
+            <div class="uk-margin-medium-top">
+                <button class="uk-button uk-button-danger" onclick="getAngle()">Get angle</button>
+            </div>
+        </div>
+    </div>
+    <div id="result"></div>
+    <div id="error"></div>
+    <script type="text/javascript" src="js/uikit.min.js"></script>
+    <script type="text/javascript" src="js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
