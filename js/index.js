@@ -3,6 +3,7 @@ function getAngle() {
     var error = document.getElementById("error")
     var result = document.getElementById("result")
     var timeArr = input.value.split(":")
+    error.innerHTML = result.innerHTML = ""
     if (input.value == "") {
         error.innerHTML = "Please enter some text in the input field"
     } else if (timeArr.length != 2) {
@@ -18,7 +19,7 @@ function getAngle() {
             hrsA += minsA/12
             var angle = Math.abs(hrsA - minsA)
             var reqAngle = (angle > 180) ? (360 - angle) : angle
-            result.innerHTML = reqAngle
+            result.innerHTML = reqAngle + "<sup>o</sup>"
         }
     }
 }
