@@ -1,0 +1,19 @@
+.hand {
+    position: absolute;
+    left: 50%;
+    transform-origin: 90% 90%;
+    width: 5px;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 0 2px 8px grey;
+    transition: all 0.3s ease;
+}
+
+#minutes {
+    height: 60px;
+    top: 55px;
+}
+
+#hours {
+    height: 40px;
+}
