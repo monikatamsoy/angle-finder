@@ -1,4 +1,8 @@
 function getAngle() {
+    pause = true
+     setTimeout(function() {
+        pause = false
+    }, 5000)
     var input = document.getElementById("time")
     var error = document.getElementById("error")
     var result = document.getElementById("result")
@@ -25,19 +29,27 @@ function getAngle() {
     }
 }
 
+var pause = false
+
 function setTime(hrsA, minsA) {
     var minutes = document.getElementById("minutes")
     var hours = document.getElementById("hours")
+    var seconds = document.getElementById("seconds")
     var date = new Date()
     var minsAngle = ((minsA == 0) ? 0 : minsA) || date.getMinutes() * 360 / 60
     var hrsAngle = hrsA || ((date.getHours() > 12) ? (date.getHours()-12) : date.getHours() ) * 360 / 12 + minsAngle/12
+    var secondsA = date.getSeconds() * 360 / 60
     hours.style.transform = "rotate(" + hrsAngle + "deg)"
     minutes.style.transform = "rotate(" + minsAngle + "deg)"
+    seconds.style.transform = "rotate(" + secondsA + "deg)"
+
 }
 setTimeout(function() {
    setTime()
 }, 20)
 
-setInterval(function() {
-    setTime()
-}, 10000)
+var m = setInterval(function() {
+    if (pause == false) {
+        setTime()
+    }
+}, 100)
